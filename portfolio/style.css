@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Baloo Tamma 2", cursive;
+    color: white;
+}
+
+body{
+    background-color: #1c1d1d;
+}
+
+/* Header */
+
+.header-container{
+    height: 100vh;
+    width: 98vw;
+    background-image: url('img/carinhacerto.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 0 112px;
+    position: relative;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 100px;
+}
+
+h2{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.social-media{
+        margin-top: 1rem;
+        display: flex;
+}
+/* Estilizando os Links */
+.social-media a{
+        text-decoration: none;
+        padding: 1rem 4rem;
+        border: 1px solid #1E1E2A;
+        min-width: 4rem;
+        display: flex;
+        align-items: center;
+        transition: .5s ease-in-out;
+
+}
+
+
+/*Mudando o background color dos botões*/
+a:hover{
+    background-color: rgb(88, 88, 88);
+}
+
+
+/* MENU */
+
+.checkbox-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.checkbox{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 400ms ease-in-out 0s;
+}
+
+/*Criando os traços do Menu*/
+
+.checkbox .trace{
+        width: 50px;
+        height: 4px;
+        background-color: grey;
+        position: absolute;
+        border-radius: 4px;
+        transition: 0.5s ease-in-out;
+
+}
+
+.checkbox .trace:nth-child(1){
+    top: 26px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2){
+    top: 46px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3){
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toggle{
+    display: none;
+}
+
+
+
+/*Menu redondo*/
+
+.menu {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    background-color: transparent;
+    height: 4px;
+    width: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px white;
+    z-index: -1;
+    transition: 400ms ease-in-out 0s;
+}
+
+/* Itens do Menu*/
+
+.menu-itemns{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+
+}
+
+.menu-itemns ul{
+    list-style-type: none;
+}
+
+.menu-itemns ul li a{
+    margin: 10px 0;
+    color: #1E1E2A;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+
+}
+
+/*Animação do Menu*/
+
+#toggle:checked + .checkbox .trace:nth-child(1){
+            transform: rotate(45deg);
+            top: 47px;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(2){
+    transform: translate(-100);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+    
+}
+
+#toggle:checked + .checkbox .trace:nth-child(3){
+    transform: rotate(-45deg);
+    top: 48px;
+}
+
+#toggle:checked + .checkbox {
+    background-color: white;
+}
+
+#toggle:checked ~ .menu{
+    box-shadow: 0px 0px 0px 100vmax white;
+    z-index: 1;
+}
+
+#toggle:checked ~ .menu-itemns{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*Main*/
+
+.title-project{
+    margin-left: 40%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 3ren 0;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+.img{
+    width:256px;
+    height:256px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(0, 0, 0);
+    background-image: url('img/2057646_1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color: black;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+
+.img-text{
+    width: 50%;
+    letter-spacing: 1px;
+    color: gray;
+}
+
+.img-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.img-wrapper::before{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    border: 1px solid white;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.img-wrapper h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.img-wrapper p {
+    font-size: 0;
+    visibility: visible;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out;
+
+}
+
+.img:hover{
+    filter: unset;
+}
+
+.img:hover > .img-wrapper::before{
+    height: 180px;
+    width: 180px;
+    opacity: 1;
+}
+
+.img:hover > .img-wrapper p{
+    opacity: 1;
+    opacity: visible;
+    font-size: 14px;
+}
+
+#title-pe{
+    margin-left: 30%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#javascript{
+    background-image: url('img/JS.png');
+}
+
+#react{
+    background-image:url('img/logo-react-256.png') ;
+}
+
+#python{
+    background-image: url('img/python.png');
+}
+
+.icon{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    
+}
+/* FOOTER */
+
+.footer{
+    margin-top: 50px;
+    width: 100%;
+    height: 100px;
+    background-color: #141416;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
